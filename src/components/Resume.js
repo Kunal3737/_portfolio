@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
       right: "-0.625rem",
       top: "calc(50%, -5px)",
       borderStyle: "solid",
-      borderColor: "tomato tomato transparent transparent",
+      borderColor: `${theme.palette.primary.light} ${theme.palette.primary.light} transparent transparent`,
       borderWidth: "0.625rem",
       transform: "rotate(45deg)",
     },
@@ -58,12 +58,12 @@ const useStyles = makeStyles((theme) => ({
       "&:nth-of-type(2n)": {
         float: "right",
         margin: "1rem",
-        borderColor: "tan",
+        borderColor: theme.palette.secondary.light,
       },
       "&:nth-of-type(2n):before": {
         right: "auto",
         left: "-0.625rem",
-        borderColor: "transparent transparent tomato tomato",
+        borderColor: `transparent transparent ${theme.palette.primary.light} ${theme.palette.primary.light}`,
       },
     },
   },
@@ -72,7 +72,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: "9.375rem",
     margin: "0 3rem 0 auto",
     fontSize: "1.8rem",
-    background: "tomato",
+    background: theme.palette.primary.light,
     color: "white",
     lineHeight: 1,
     padding: "0.5rem 0 1rem",
@@ -92,7 +92,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   heading: {
-    color: "tomato",
+    color: theme.palette.primary.light,
     padding: "3rem 0",
     textTransform: "uppercase",
   },
@@ -101,7 +101,14 @@ const useStyles = makeStyles((theme) => ({
     padding: 0,
     textTransform: "uppercase",
   },
+  collegeName: {
+    color: theme.palette.primary.light,
+  },
+  yearText: {
+    color: theme.palette.secondary.light,
+  },
 }));
+
 const Resume = () => {
   const classes = useStyles();
 
@@ -130,14 +137,16 @@ const Resume = () => {
             <Typography
               variant="body1"
               align="center"
-              style={{ color: "tomato" }}
+              className={classes.collegeName}
+              // style={{ color: "theme.palette.primary.light" }}
             >
               Shardashram Vidyamandir
             </Typography>
             <Typography
               variant="subtitle1"
               align="center"
-              style={{ color: "tan" }}
+              className={classes.yearText}
+              // style={{ color: "tan" }}
             >
               <em>2012 - 2013</em>
             </Typography>
@@ -160,14 +169,16 @@ const Resume = () => {
             <Typography
               variant="body1"
               align="center"
-              style={{ color: "tomato" }}
+              className={classes.collegeName}
+              // style={{ color: "theme.palette.primary.light" }}
             >
               C.K.T. Jr. College
             </Typography>
             <Typography
               variant="subtitle1"
               align="center"
-              style={{ color: "tan" }}
+              className={classes.yearText}
+              // style={{ color: "tan" }}
             >
               <em>2014 - 2015</em>
             </Typography>
@@ -190,14 +201,16 @@ const Resume = () => {
             <Typography
               variant="body1"
               align="center"
-              style={{ color: "tomato" }}
+              className={classes.collegeName}
+              // style={{ color: "theme.palette.primary.light" }}
             >
               Bharati Vidyapeeth Colloge of Engineering
             </Typography>
             <Typography
               variant="subtitle1"
               align="center"
-              style={{ color: "tan" }}
+              className={classes.yearText}
+              // style={{ color: "tan" }}
             >
               <em>2015 - 2019</em>
             </Typography>

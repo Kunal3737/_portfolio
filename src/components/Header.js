@@ -4,7 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Typography, Avatar, Grid, Box } from "@material-ui/core";
 import Typed from "react-typed";
 
-import avatar from "../assests/avatar.png";
+import avatar from "../assests/pp.jpg";
 
 const useStyles = makeStyles((theme) => ({
   avatar: {
@@ -13,10 +13,11 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
   },
   title: {
-    color: "tomato",
+    // color: "theme.palette.primary.light",
+    color: theme.palette.primary.light,
   },
   subTitle: {
-    color: "tan",
+    color: theme.palette.secondary.light,
     marginBottom: "3rem",
   },
   typedContainer: {

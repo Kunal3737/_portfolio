@@ -6,21 +6,21 @@ import GitHub from "@material-ui/icons/GitHub";
 // import Instagram from "@material-ui/icons/Instagram";
 import LinkedIn from "@material-ui/icons/LinkedIn";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
     "& .MuiBottomNavigationAction-root": {
       minWidth: 0,
       maxWidth: 250,
     },
     "& .MuiSvgIcon-root": {
-      fill: "tan",
+      fill: theme.palette.secondary.light,
       "&:hover": {
-        fill: "tomato",
+        fill: theme.palette.primary.light,
         fontSize: "1.8rem",
       },
     },
   },
-});
+}));
 const Footer = () => {
   const classes = useStyles();
 

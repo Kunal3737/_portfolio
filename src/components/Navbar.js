@@ -28,12 +28,14 @@ import {
 } from "@material-ui/icons";
 import MenuIcon from "@material-ui/icons/Menu";
 
-import avatar from "../assests/avatar.png";
+// import avatar from "../assests/avatar.png";
+import avatar from "../assests/pp.jpg";
 
 const useStyles = makeStyles((theme) => ({
   menuSliderContainer: {
     width: 250,
-    background: "#511",
+    background: "#423E37",
+    // background: theme.palette.primary.light,
     height: "100%",
   },
   avatar: {
@@ -43,7 +45,13 @@ const useStyles = makeStyles((theme) => ({
     height: theme.spacing(13),
   },
   listItem: {
-    color: "tan",
+    color: theme.palette.secondary.light,
+  },
+  menuIcon: {
+    color: theme.palette.primary.light,
+  },
+  portfolioText: {
+    color: theme.palette.secondary.light,
   },
 }));
 
@@ -114,9 +122,12 @@ const Navbar = () => {
         <AppBar position="static" style={{ background: "#222" }}>
           <Toolbar>
             <IconButton onClick={toggleSlider("right", true)}>
-              <MenuIcon style={{ color: "tomato" }} />
+              <MenuIcon 
+                className={classes.menuIcon}
+                // style={{ color: "theme.palette.primary.light" }}
+              />
             </IconButton>
-            <Typography style={{ color: "tan" }} variant="h5">
+            <Typography className={classes.portfolioText} variant="h5">
               Portfolio
             </Typography>
             <MobileRightMenuSlider

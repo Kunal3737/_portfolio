@@ -14,32 +14,38 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     marginTop: "1rem",
-    color: "tomato",
-    borderColor: "tomato",
+    color: theme.palette.primary.light,
+    borderColor: theme.palette.primary.light,
   },
+  hireText: {
+    color: theme.palette.primary.light,
+    textAlign: "center",
+    textTransform: "uppercase",
+
+  }
 }));
 
-const InputField = withStyles({
+const InputField = withStyles((theme) => ({
   root: {
     "& label.Mui-focused": {
-      color: "tomato",
+      color: theme.palette.primary.light,
     },
     "& label": {
-      color: "tan",
+      color: theme.palette.secondary.light,
     },
     "& .MuiOutlinedInput-root": {
       "& fieldset": {
-        borderColor: "tan",
+        borderColor: theme.palette.secondary.light,
       },
       "&:hover fieldset": {
-        borderColor: "tan",
+        borderColor: theme.palette.secondary.light,
       },
       "&.Mui-focused fieldset": {
-        borderColor: "tan",
+        borderColor: theme.palette.secondary.light,
       },
     },
   },
-})(TextField);
+}))(TextField);
 
 const Contacts = () => {
   const classes = useStyles();
@@ -67,11 +73,12 @@ const Contacts = () => {
         <Box component="form" className={classes.form} onSubmit={formHandler}>
           <Typography
             variant="h5"
-            style={{
-              color: "tomato",
-              textAlign: "center",
-              textTransform: "uppercase",
-            }}
+            className={classes.hireText}
+            // style={{
+            //   color: "theme.palette.primary.light",
+            //   textAlign: "center",
+            //   textTransform: "uppercase",
+            // }}
           >
             HIRE or contact me...
           </Typography>
